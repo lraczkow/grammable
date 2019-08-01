@@ -1,12 +1,26 @@
 require 'rails_helper'
 
 RSpec.describe GramsController, type: :controller do
-  describe "grams#index action" do
+  describe "grams#show action" do
+    it "should successfully show the page if the gram is found" do
+      gram = FactoryBot.create(:gram)
+      get :show, params: { id: gram.id }
+      expect(response).to have_http_status(:success)
+    end
+
+    it "should return a 404 error if the gram is not found" do
+      get :show, params: { id: 'TACOCAT' }
+      expect(response).to have_http_status(:not_found)
+    end
+  end
+
+    describe "grams#index action" do
     it "should successfully show the page" do
       get :index
       expect(response).to have_http_status(:success)
     end
   end
+
 
   describe "grams#new action" do
     it "should require users to be logged in" do
@@ -23,7 +37,9 @@ RSpec.describe GramsController, type: :controller do
     end
   end
 
+
   describe "grams#create action" do
+
     it "should require users to be logged in" do
       post :create, params: { gram: { message: "Hello" } }
       expect(response).to redirect_to new_user_session_path
@@ -50,5 +66,6 @@ RSpec.describe GramsController, type: :controller do
       expect(response).to have_http_status(:unprocessable_entity)
       expect(gram_count).to eq Gram.count
     end
+
   end
 end
