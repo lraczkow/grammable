@@ -93,6 +93,7 @@ input {
   font-size: 16px;
   margin-right: 20px;
   margin-left: auto;
+  float: right;
 }
 
 .comments {
@@ -101,11 +102,15 @@ input {
 
 .comment {
   font-size: 16px;
-  margin: 5px;
+  margin: 10px;
 }
 
 .comment_handle {
   color: #125688;
   font-weight: bold;
   font-size: 18px;
+}
+
+h4 {
+  margin-top: 10px;
 }
