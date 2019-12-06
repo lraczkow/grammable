@@ -1,24 +1,5 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A clone of Instagram built in Ruby on Rails. Uploaded photos go to an AWS S3 bucket via the Carrierwave gem.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The site is deployed at https://grammable-lauren-raczkoski.herokuapp.com/
